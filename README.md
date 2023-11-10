@@ -37,6 +37,7 @@ You need to send your credentiasl in order authenticate with the aws services:
 You need to instal paws with cpan: cpan Paws and the required dependencies in order to run this app. cpan JSON
 
 To run the app you just need to use the perl command: perl TranslateController.pl
+
 After some time, you would need to do a aws sso login  --profile <profile-name> and to refresh your credentials and then update them in the ./awas/credentials file.
 
 You can use aws configure list-profiles to know you current profile.
