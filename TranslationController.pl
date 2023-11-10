@@ -1,16 +1,20 @@
 #!/usr/bin/env perl
 
 use Mojolicious::Lite -signatures;
+use JSON;
+use feature qw / signatures /;
 
 require './TranslationService.pl';
 
-get '/:txt/:source-language-code/:target_language_code' => sub ($c) {
-  my $text = $c->param('txt');
-  my $source_language_code = $c->param('source-language-code');
-  my $target_language_code = $c->param('target_language_code');
+get '/' => sub ($c) {
+  my %data = from_json($c->req->body)->%*;
+  my $text = $data{text};
+  my $source_language_code = $data{source_language_code};
+  my $target_language_code = $data{target_language_code};
   
-  my $result = translate_text( $text, $source_language_code, $target_language_code );
-  $c->render(text => $result);
+  my $response = translate_text( $text, $source_language_code, $target_language_code );
+
+  $c->render(json => $response);
 };
 
 app->start;
