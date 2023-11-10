@@ -9,18 +9,22 @@ follow the next guide: https://docs.aws.amazon.com/sdkref/latest/guide/access-ss
 You can use the next body in Postman, pointing to the Url: http://localhost:8080/translator
 
 ## Input
+```json
 {
 "source": "en",
 "target": "es",
 "text": "Hello world"
 }
+```
 ## Output
+```json
 {
 "source": "en",
 "target": "es",
 "answer": "Hola mundo",
 "timestamp": "2023-09-13T20:46:34.698+00:00"
 }
+```
 ## troubleshooting
 After some time, you would need to do a aws sso login  --profile <profile-name> and to refresh your credentials and then update them in the ./awas/credentials file.
 
