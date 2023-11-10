@@ -1,7 +1,7 @@
 # Perl_aws_translator
 
-Perl application using [Paws]([https://www.markdownguide.org/](https://metacpan.org/pod/Paws):  A Perl SDK for AWS (Amazon Web Services) APIs
-[Paws](https://metacpan.org/pod/Paws)   
+Perl application using [Paws](https://metacpan.org/pod/Paws) A Perl SDK for AWS (Amazon Web Services) APIs
+ 
 ## ConfigureIAM Identity Center authentication
 follow the next guide: https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html#idcGettingStarted
 
