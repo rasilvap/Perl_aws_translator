@@ -4,9 +4,9 @@ use Paws;
 use Paws::Translate;
 use feature qw / signatures /;
 
-my $translate = Paws->service('Translate', region => 'us-east-1');
-
 sub translate_text ( $text, $source_language_code, $target_language_code ) {
+
+    my $translate = Paws->service('Translate', region => 'us-east-1');
     
     my $response = $translate->TranslateText( 
         Text => $text, 
