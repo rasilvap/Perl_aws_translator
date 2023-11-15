@@ -18,19 +18,16 @@ Rest Api to use the AWS Translator service
             Build the Docker Image: docker build -t image-name .
     
             Configure AWS Credentials
-                Before running the application, ensure you configure AWS credentials. Set the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN environment variables with your AWS credentials in the DockerFile:
-                > 
+                Before running the application, ensure you configure AWS credentials. Set the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN environment variables with your AWS credentials in the DockerFile: 
                 AWS_ACCESS_KEY_ID=your-access-key-id
                 AWS_SECRET_ACCESS_KEY=your-secret-access-key
                 AWS_SESSION_TOKEN=your-session-token
-                > 
                 
             Build and run the Docker image:
-            ```bash
+           
                 docker build -t my-perl-app .
-            ```
-            ```bash
+            
                 docker run -p 3000:3000 my-perl-app .
-            ```    
+           
 3. Test the service, open Postman and import the file:  
    >  Perl-Aws-Translator.postman_collection.json
