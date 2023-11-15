@@ -11,20 +11,26 @@ Rest Api to use the AWS Translator service
     ```sh
     git clone https://github.com/rasilvap/Perl_aws_translator.git
     ```
-2. Go to the project, open the Dockerfile and edit the following the values:
-   
-     >  
-        ENV AWS_ACCESS_KEY_ID=<>
-        ENV AWS_SECRET_ACCESS_KEY=<>
-        ENV AWS_SESSION_TOKEN=<>
-     >
-4. Build and run the Docker image:
-    ```bash
-        docker build -t my-perl-app .
-    ```
-    ```bash
-        docker run -it --expose 8008 -p 8008:8008 --rm --name my-running-app my-perl-app
-    ```    
-5. Test the service, open Postman and import the file:  
+2.  ### Dockerfile for Perl Application with AWS cli Paws and Dancer2
+    This Dockerfile provides an environment to run a Perl application based on Dancer2 that utilizes AWS and requires JSON, Paws, and AWS CLI dependencies. Additionally, a step-by-step guide is included to set up AWS credentials and run      the application on a new machine.
+
+       #### Steps:
+            Build the Docker Image: docker build -t image-name .
+    
+            Configure AWS Credentials
+                Before running the application, ensure you configure AWS credentials. Set the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN environment variables with your AWS credentials in the DockerFile:
+                > 
+                AWS_ACCESS_KEY_ID=your-access-key-id
+                AWS_SECRET_ACCESS_KEY=your-secret-access-key
+                AWS_SESSION_TOKEN=your-session-token
+                > 
+                
+            Build and run the Docker image:
+            ```bash
+                docker build -t my-perl-app .
+            ```
+            ```bash
+                docker run -p 3000:3000 my-perl-app .
+            ```    
+3. Test the service, open Postman and import the file:  
    >  Perl-Aws-Translator.postman_collection.json
-   >
