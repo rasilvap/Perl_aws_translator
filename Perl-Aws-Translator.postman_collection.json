@@ -29,8 +29,8 @@
 							"  pm.expect(jsonData.target).to.eql('es');",
 							"});",
 							"",
-							"pm.test(\"answer is: Hola mundo \", () => {",
-							"  pm.expect(jsonData.answer).to.eql('Hola mundo');",
+							"pm.test(\"translated_text is: Hola mundo\", () => {",
+							"  pm.expect(jsonData.translated_text).to.eql('Hola mundo');",
 							"});"
 						],
 						"type": "text/javascript"
@@ -56,7 +56,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"SourceLanguageCode\": \"en\",\r\n    \"TargetLanguageCode\": \"fr\",\r\n    \"Text\": \"hello world\"\r\n}",
+					"raw": "{\r\n\"source\": \"en\",\r\n\"target\": \"es\",\r\n\"text\": \"Hello world\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
