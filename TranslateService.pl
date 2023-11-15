@@ -2,13 +2,16 @@
 
 use Paws;
 use Paws::Credential::ProviderChain;
+require './Config.pm';
 
 sub translate {
+# Imprimir para depuración
+   
     my ($source_language, $target_language, $text_to_translate) = @_;
 
     # Configuring the Translate service with Paws
     my $aws_config = {
-        region      => 'us-east-1', # Change this to your AWS region
+        region      => $Config::AWS_REGION, # Change this to your AWS region
         credentials => Paws::Credential::ProviderChain->new(
             providers => [ 'Paws::Credential::Environment', 'Paws::Credential::InstanceProfile' ],
         ),
