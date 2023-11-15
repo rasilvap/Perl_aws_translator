@@ -2,7 +2,7 @@
 
 use Dancer2;
 use JSON;
-require './TranslateService.pl';
+require './TranslateService.pm';
 
 set serializer => 'JSON';
 
@@ -21,7 +21,8 @@ any ['get', 'post'] => '/translate' => sub {
     my $text_to_translate   = $input_data->{text}   // '';
 
     # Performing translation using the TranslateService
-    my $translated_text = translate($source_language, $target_language, $text_to_translate);
+    my $service = TranslateService->new;
+    my $translated_text = $service->translate($source_language, $target_language, $text_to_translate);
 
     # Converting the response to a serializable data structure
     my $response_data = {

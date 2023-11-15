@@ -1,7 +1,11 @@
-# TranslateService.pl
+package TranslateService;
 
 use Paws;
 use Paws::Credential::ProviderChain;
+
+sub new {
+    return bless {}, shift;
+}
 
 sub translate {
     my ($source_language, $target_language, $text_to_translate) = @_;

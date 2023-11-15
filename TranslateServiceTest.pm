@@ -5,17 +5,18 @@ use lib '.';
 use base 'TestBase';
 
 use TranslateService;
- 
-# setup methods are run before every test method.
-sub create_object : Test(setup) {
+
+sub make_fixture : Test(setup) {
     my $service = TranslateService->new;
     shift->{service} = $service;
 }
 
-sub test_translation : Test {
+sub test_en_to_es_translation : Test {
     my $service = shift->{service};
-    my $$source_language = 'en';
-    my $target_language = 'es';
-    my $text_to_translate = 'Hello World!';
-    is($service->translate, 'Hola Mundo!', 'Successful translation!');
-} 
+    is($service->translate( 'en', 'es', 'Hello World!' ), 'Hola Mundo!');
+}
+
+sub test_es_to_en_translation : Test {
+    my $service = shift->{service};
+    is($service->translate( 'es', 'en', 'Hola Mundo!' ), 'Hello World!');
+}
