@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "6d5986fb-3226-44ff-9383-6a1986d250a0",
+		"name": "Perl-Aws-Translator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "256445"
+	},
+	"item": [
+		{
+			"name": "translate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();",
+							"console.log(\"jsonData: \" + jsonData);",
+							"console.log(\"jsonData.title: \" + jsonData.title);",
+							"",
+							"pm.test('Check status code s 200', () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"source is: en \", () => {",
+							"  pm.expect(jsonData.source).to.eql('en');",
+							"});",
+							"",
+							"pm.test(\"target is: es \", () => {",
+							"  pm.expect(jsonData.target).to.eql('es');",
+							"});",
+							"",
+							"pm.test(\"answer is: Hola mundo \", () => {",
+							"  pm.expect(jsonData.answer).to.eql('Hola mundo');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"SourceLanguageCode\": \"en\",\r\n    \"TargetLanguageCode\": \"fr\",\r\n    \"Text\": \"hello world\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/translate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"translate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
