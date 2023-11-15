@@ -17,7 +17,8 @@ Rest Api to use the AWS Translator service
        #### Steps:
     
             Configure AWS Credentials
-                Before running the application, ensure you configure AWS credentials. Set the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN environment variables with your AWS credentials in the DockerFile: 
+                Before running the application, ensure you configure AWS credentials. Set the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN
+                environment variables with your AWS credentials in the DockerFile: 
                 AWS_ACCESS_KEY_ID=your-access-key-id
                 AWS_SECRET_ACCESS_KEY=your-secret-access-key
                 AWS_SESSION_TOKEN=your-session-token
@@ -29,11 +30,13 @@ Rest Api to use the AWS Translator service
                 docker run -p 3000:3000 my-perl-app .
     
        #### Notes:
-            Make sure to replace your-access-key, your-secret-key, and your-session-token with your actual AWS credentials. This command is suitable for applications that require AWS credentials
-            to run, the token duration is one hour, after this time you need to update the credentials to run the app, you can use the next command:
+            Make sure to replace your-access-key, your-secret-key, and your-session-token with your actual AWS credentials.
+            This command is suitable for applications that require AWS credentials to run, the token duration is one hour,
+            after this time you need to update the credentials to run the app, you can use the next command:
             docker run -e AWS_ACCESS_KEY_ID=your-access-key -e AWS_SECRET_ACCESS_KEY=your-secret-key -e AWS_SESSION_TOKEN=your-session-token -p 3000:3000 my-perl-app.
 
-            In order to update your credentials, you would need to do a aws sso login  --profile <profile-name> and to refresh your credentials and then update them in the ./awas/credentials file.
+            In order to update your credentials, you would need to do a aws sso login  --profile <profile-name> and to refresh
+            your credentials and then update them in the ./awas/credentials file.
             You can use aws configure list-profiles to know you current profile.
             Then sign in to the IAM Identity center.
             The format of the URL is https://d-xxxxxxxxxx.awsapps.com/startor your_subdomain.awsapps.com/start and then go to the AWS Account/Command line programmatic access and reeplace
