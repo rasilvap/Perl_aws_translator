@@ -29,7 +29,7 @@ Rest Api to use the AWS Translator service
                 docker run -p 3000:3000 my-perl-app .
     
        #### Notes:
-            Make sure to replace **your-access-key**, **your-secret-key**, and **your-session-token** with your actual AWS credentials. This command is suitable for applications that require AWS credentials to run, the token duration is              hour, after this time you need to update the credentials to run the app, you can use the next command:
+            Make sure to replace your-access-key, your-secret-key, and your-session-token with your actual AWS credentials. This command is suitable for applications that require AWS credentials to run, the token duration is                          hour, after this time you need to update the credentials to run the app, you can use the next command:
             docker run -e AWS_ACCESS_KEY_ID=your-access-key -e AWS_SECRET_ACCESS_KEY=your-secret-key -e AWS_SESSION_TOKEN=your-session-token -p 3000:3000 my-perl-app.
 
             In order to update your credentials, you would need to do a aws sso login  --profile <profile-name> and to refresh your credentials and then update them in the ./awas/credentials file.
