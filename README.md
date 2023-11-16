@@ -12,28 +12,26 @@ Rest Api to use the AWS Translator service
     git clone https://github.com/rasilvap/Perl_aws_translator.git
     ```
 2.  ### Dockerfile for Perl Application with AWS cli Paws and Dancer2
-    This Dockerfile provides an environment to run a Perl application based on Dancer2 that utilizes AWS and requires JSON, Paws, and AWS CLI dependencies. Additionally, a step-by-step guide is included to set up AWS credentials and run      the application on a new machine.
+    This Dockerfile provides an environment to run a Perl application based on Dancer2 and requires JSON, Paws, and AWS CLI dependencies.
 
        #### Steps:
-    
-            Configure AWS Credentials
-                Before running the application, ensure you configure AWS credentials. Set the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, and AWS_SESSION_TOKEN
-                environment variables with your AWS credentials in the DockerFile: 
-                AWS_ACCESS_KEY_ID=your-access-key-id
-                AWS_SECRET_ACCESS_KEY=your-secret-access-key
-                AWS_SESSION_TOKEN=your-session-token
                 
             Build and run the Docker image:
            
                 docker build -t my-perl-app .
             
                 docker run -p 3000:3000 my-perl-app .
-    
-       #### Notes:
-            Make sure to replace your-access-key, your-secret-key, and your-session-token with your actual AWS credentials.
+
+3. Test the service, open Postman and import the file:  
+   >  Perl-Aws-Translator.postman_collection.json
+
+    Configure AWS Credentials
+        Before running the test, ensure you configure AWS credentials. Set the aws_access_key, aws_secret_key, and aws_session_token in the headers.
+   
+          #### Notes:
+            Make sure to replace aws_access_key, aws_secret_key, and your aws_secret_key with your actual AWS credentials.
             This command is suitable for applications that require AWS credentials to run, the token duration is one hour,
-            after this time you need to update the credentials to run the app, you can use the next command:
-            docker run -e AWS_ACCESS_KEY_ID=your-access-key -e AWS_SECRET_ACCESS_KEY=your-secret-key -e AWS_SESSION_TOKEN=your-session-token -p 3000:3000 my-perl-app.
+            after this time you need to update the credentials to run the app.
 
             In order to update your credentials, you would need to do a aws sso login  --profile <profile-name> and to refresh
             your credentials and then update them in the ./awas/credentials file.
@@ -41,6 +39,3 @@ Rest Api to use the AWS Translator service
             Then sign in to the IAM Identity center.
             The format of the URL is https://d-xxxxxxxxxx.awsapps.com/startor your_subdomain.awsapps.com/start and then go to the AWS Account/Command line programmatic access and reeplace
             the new credentials in you env vars, in the above docker command.
-            
-4. Test the service, open Postman and import the file:  
-   >  Perl-Aws-Translator.postman_collection.json
