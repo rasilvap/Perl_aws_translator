@@ -28,14 +28,14 @@ Rest Api to use the AWS Translator service
     Configure AWS Credentials
         Before running the test, ensure you configure AWS credentials. Set the aws_access_key, aws_secret_key, and aws_session_token in the headers.
    
-          #### Notes:
-            Make sure to replace aws_access_key, aws_secret_key, and your aws_secret_key with your actual AWS credentials.
-            This command is suitable for applications that require AWS credentials to run, the token duration is one hour,
-            after this time you need to update the credentials to run the app.
-
-            In order to update your credentials, you would need to do a aws sso login  --profile <profile-name> and to refresh
-            your credentials and then update them in the ./awas/credentials file.
-            You can use aws configure list-profiles to know you current profile.
-            Then sign in to the IAM Identity center.
-            The format of the URL is https://d-xxxxxxxxxx.awsapps.com/startor your_subdomain.awsapps.com/start and then go to the AWS Account/Command line programmatic access and reeplace
-            the new credentials in you env vars, in the above docker command.
+    #### Notes:
+    Make sure to replace aws_access_key, aws_secret_key, and your aws_secret_key with your actual AWS credentials.
+    This command is suitable for applications that require AWS credentials to run, the token duration is one hour,
+    after this time you need to update the credentials to run the app.
+    
+    In order to update your credentials, you would need to do a aws sso login  --profile <profile-name> and to refresh
+    your credentials and then update them in the ./awas/credentials file.
+    You can use aws configure list-profiles to know you current profile.
+    Then sign in to the IAM Identity center.
+    The format of the URL is https://d-xxxxxxxxxx.awsapps.com/startor your_subdomain.awsapps.com/start and then go to the AWS Account/Command line programmatic access and reeplace
+    the new credentials in you env vars, in the above docker command.
