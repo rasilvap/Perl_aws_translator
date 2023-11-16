@@ -39,3 +39,5 @@ Rest Api to use the AWS Translator service
     Then sign in to the IAM Identity center.
     The format of the URL is https://d-xxxxxxxxxx.awsapps.com/startor your_subdomain.awsapps.com/start and then go to the AWS Account/Command line programmatic access and reeplace
     the new credentials in you env vars, in the above docker command.
+
+    You can configure the AWS region by changing the value of the $AWS_REGION variable in the Config.pm File.
